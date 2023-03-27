@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<<html lang="en">>
+<head>
+	<link rel="stylesheet" href="./main.css">
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Monthsary Greeting</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+<div id="loading-screen">
+  <div class="circ">
+    <div class="load">Loading . . . </div>
+    <div class="hands"></div>
+    <div class="body"></div>
+    <div class="head">
+    <div class="eye"></div>
+  </div>
+</div>
+</div>
+
+
+	<h1>Lagay mo nga name mo :< </h1>
+	<form>
+		<input type="text" name="name" placeholder="Enter your name here">
+		<br><br>
+		<input type="submit" value="Click me" onclick="checkName(); return false;">
+	</form>
+
+	<div class="box" id="greetingBox"></div>
+	<button id="nextButton" style="display:none" >Next</button>
+<script>
+		window.onload = function() {
+		setTimeout(function() {
+			document.getElementById("loading-screen").style.display = "none";
+			document.getElementById("form-screen").style.display = "block";
+		}, 5000);
+};
+		
+		function checkName() {
+		var name = document.getElementsByName("name")[0].value;
+			if (name === "Christine") {
+        showGreetingBox();
+        hideForm();
+			} else {
+        showMessage("Oopps!!! Mukhang hindi ikaw ang bebe ko. Lumayas ka dito");
+		hideForm();
+    }
+}
+
+		function showGreetingBox() {
+		var greetingBox = document.getElementById("greetingBox");
+		greetingBox.innerHTML = " Hi Christine/Be!<br><br>Happy first monthsary, my bebe! I can hardly believe that it's already been a month since we embarked on this beautiful journey together. I feel incredibly lucky to have found you, someone who treats me with so much love and respect. You've made me happier than I ever thought was possible. <br><br>From the moment I met you, I knew there was something special about you. I was drawn to your kind heart, your infectious laughter, and your beautiful smile. As we've grown closer over the past month, I've come to realize that you are the one I've been waiting for my whole life.<br><br>Christine, I want you to know that I love you more than words can express. I want to be with you always, to share all the joys and challenges of life together. I hope that someday soon you will become my wife, so that we can build a life filled with love, happiness, and adventure.<br><br>Thank you for being the light in my life, Christine. I cherish every moment we spend together, and I look forward to many more monthsaries and anniversaries to come.<br><br>With all my love,<br>Bebe Jet";
+		greetingBox.style.display = "block";
+		var nextButton = document.getElementById("nextButton");
+		nextButton.style.display = "block";
+}
+		document.getElementById("nextButton").onclick = function() {
+		window.location.href = "pictures.html";
+}
+		function showMessage(msg) {
+		var greetingBox = document.getElementById("greetingBox");
+		greetingBox.innerHTML = msg;
+		greetingBox.style.display = "block";
+		
+}
+		function hideForm() {
+		var form = document.getElementsByTagName("form")[0];
+		var heading = document.getElementsByTagName("h1")[0];
+		form.style.display = "none";
+		heading.style.display = "none";
+}
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+  // Show the loading div and hide the form
+  document.querySelector('.circ').style.display = 'block';
+  document.querySelector('#form').style.display = 'none';
+  
+  // Wait for 5 seconds before showing the form and hiding the loading div
+  setTimeout(function() {
+    document.querySelector('.circ').style.display = 'none';
+    document.querySelector('#form').style.display = 'block';
+  }, 5000);
+});	
+</script>	
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="style/style.css">
+    <title>Grid Example</title>
+	
+    <style>
+	body {
+        background-color: #556B2F;
+      }	
+	div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+	}
+	div img{
+			width: 250px;
+			height: 150px;
+			border: 2px solid #ff3d0036;
+			border-radius: 13px;
+			box-shadow: 4px 10px 10px 0px #00000042;
+			cursor: pointer;
+			margin: 10px;
+			transition: 400ms;
+	}
+	div img:hover{
+			filter: grayscale(1);
+			transform: scale(1.03);
+	}
+    </style>
+  </head>
+<body>  
+  <div>
+        <img src="pic/image1.jpg" alt="" >
+		<img src="pic/image2.jpg" alt="" >
+		<img src="pic/image3.jpg" alt="" >
+		<img src="pic/image4.jpg" alt="" >
+		<img src="pic/image5.jpg" alt="" >
+		<img src="pic/image6.jpg" alt="" >
+		<img src="pic/image7.jpg" alt="" >
+		<img src="pic/image8.jpg" alt="" >
+		<img src="pic/image9.jpg" alt="" >
+		<img src="pic/image10.jpg" alt="" >
+		<img src="pic/image11.jpg" alt="" >
+		<img src="pic/image12.jpg" alt="" >
+		<img src="pic/image13.jpg" alt="" >
+		<img src="pic/image14.jpg" alt="" >
+		<img src="pic/image15.jpg" alt="" >
+		<img src="pic/image16.jpg" alt="" >
+		<img src="pic/image17.jpg" alt="" >
+		<img src="pic/image18.jpg" alt="" >
+		<img src="pic/image19.jpg" alt="" >
+		<img src="pic/image20.jpg" alt="" >
+		<img src="pic/image21.jpg" alt="" >
+		<img src="pic/image22.jpg" alt="" >
+		<img src="pic/image23.jpg" alt="" >
+		<img src="pic/image24.jpg" alt="" >
+    </div>
+	
+<script>
+	var boxes = document.querySelectorAll('.box');
+
+		boxes.forEach(function(box) {
+	var image = box.querySelector('img');
+		image.addEventListener('click', function() {
+    if (image.classList.contains('zoomed')) {
+      image.classList.remove('zoomed');
+  } else {
+      boxes.forEach(function(box) {
+        box.querySelector('img').classList.remove('zoomed');
+      });
+      image.classList.add('zoomed');
+    }
+  });
+});
+</script>
+  </body>
+</html>
